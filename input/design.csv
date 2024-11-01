@@ -1,0 +1,16 @@
+group,sample,read_1,read_2
+treated_5FC,F1_185_1,/mnt/rdisk/minhnguyen/Cauris/raw/F1_185_1/F1_185_1_1.fq.gz,/mnt/rdisk/minhnguyen/Cauris/raw/F1_185_1/F1_185_1_2.fq.gz
+treated_5FC,F2_185_2,/mnt/rdisk/minhnguyen/Cauris/raw/F2_185_2/F2_185_2_1.fq.gz,/mnt/rdisk/minhnguyen/Cauris/raw/F2_185_2/F2_185_2_2.fq.gz
+treated_5FC,F3_185_3,/mnt/rdisk/minhnguyen/Cauris/raw/F3_185_3/F3_185_3_1.fq.gz,/mnt/rdisk/minhnguyen/Cauris/raw/F3_185_3/F3_185_3_2.fq.gz
+treated_5FC,F4_188_1,/mnt/rdisk/minhnguyen/Cauris/raw/F4_188_1/F4_188_1_1.fq.gz,/mnt/rdisk/minhnguyen/Cauris/raw/F4_188_1/F4_188_1_2.fq.gz
+treated_5FC,F5_188_2,/mnt/rdisk/minhnguyen/Cauris/raw/F5_188_2/F5_188_2_1.fq.gz,/mnt/rdisk/minhnguyen/Cauris/raw/F5_188_2/F5_188_2_2.fq.gz
+treated_5FC,F6_188_3,/mnt/rdisk/minhnguyen/Cauris/raw/F6_188_3/F6_188_3_1.fq.gz,/mnt/rdisk/minhnguyen/Cauris/raw/F6_188_3/F6_188_3_2.fq.gz
+treated_5FC,F7_189_1,/mnt/rdisk/minhnguyen/Cauris/raw/F7_189_1/F7_189_1_1.fq.gz,/mnt/rdisk/minhnguyen/Cauris/raw/F7_189_1/F7_189_1_2.fq.gz
+treated_5FC,F8_189_2,/mnt/rdisk/minhnguyen/Cauris/raw/F8_189_2/F8_189_2_1.fq.gz,/mnt/rdisk/minhnguyen/Cauris/raw/F8_189_2/F8_189_2_2.fq.gz
+treated_5FC,F9_189_3,/mnt/rdisk/minhnguyen/Cauris/raw/F9_189_3/F9_189_3_1.fq.gz,/mnt/rdisk/minhnguyen/Cauris/raw/F9_189_3/F9_189_3_2.fq.gz
+treated_5FC,F10_191_1,/mnt/rdisk/minhnguyen/Cauris/raw/F10_191_1/F10_191_1_1.fq.gz,/mnt/rdisk/minhnguyen/Cauris/raw/F10_191_1/F10_191_1_2.fq.gz
+treated_5FC,F11_191_2,/mnt/rdisk/minhnguyen/Cauris/raw/F11_191_2/F11_191_2_1.fq.gz,/mnt/rdisk/minhnguyen/Cauris/raw/F11_191_2/F11_191_2_2.fq.gz
+treated_5FC,F12_191_3,/mnt/rdisk/minhnguyen/Cauris/raw/F12_191_3/F12_191_3_1.fq.gz,/mnt/rdisk/minhnguyen/Cauris/raw/F12_191_3/F12_191_3_2.fq.gz
+WT,S4_48_1,/mnt/rdisk/minhnguyen/Cauris/raw/S4_48_1/S4_48_1_1.fq.gz,/mnt/rdisk/minhnguyen/Cauris/raw/S4_48_1/S4_48_1_2.fq.gz
+WT,S5_48_2,/mnt/rdisk/minhnguyen/Cauris/raw/S5_48_2/S5_48_2_1.fq.gz,/mnt/rdisk/minhnguyen/Cauris/raw/S5_48_2/S5_48_2_2.fq.gz
+WT,S6_48_3,/mnt/rdisk/minhnguyen/Cauris/raw/S6_48_3/S6_48_3_1.fq.gz,/mnt/rdisk/minhnguyen/Cauris/raw/S6_48_3/S6_48_3_2.fq.gz

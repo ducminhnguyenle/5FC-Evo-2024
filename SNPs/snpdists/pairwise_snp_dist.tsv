@@ -1,0 +1,7 @@
+	reference	strain_185	strain_188	strain_189	strain_191	strain_48
+reference	0	875	875	874	869	854
+strain_185	875	0	15	17	18	21
+strain_188	875	15	0	15	16	20
+strain_189	874	17	15	0	15	22
+strain_191	869	18	16	15	0	17
+strain_48	854	21	20	22	17	0
