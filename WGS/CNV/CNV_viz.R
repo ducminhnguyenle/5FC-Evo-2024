@@ -1,6 +1,7 @@
 library(tidyverse)
 library(ggprism)
 library(ggtext)
+library(patchwork)
 
 # Define function to read in copy number ratio (cnr) data and plot cnr scatter plot
 plot_cnr = function(input_cnr, output_cnr_plot, title) {
@@ -27,6 +28,9 @@ plot_cnr = function(input_cnr, output_cnr_plot, title) {
                 color = "red",
                 linewidth = 1
             ) +
+            scale_y_continuous(
+                expand = c(0, 0)
+            ) +
             scale_color_manual(
                 breaks = scaffolds,
                 values = scaffold_cols
@@ -34,7 +38,7 @@ plot_cnr = function(input_cnr, output_cnr_plot, title) {
             ylim(c(-1, 1)) +
             labs(
                 x = NULL, y = "log<sub>2</sub>(mean coverage)",
-                title = title
+                subtitle = title
             ) +
             theme_prism(
                 base_size = 16,
@@ -42,7 +46,9 @@ plot_cnr = function(input_cnr, output_cnr_plot, title) {
             ) +
             theme(
                 axis.text.x = element_text(size = 12, angle = 45, hjust = 1, vjust = 1),
-                axis.title.y = element_markdown()
+                axis.title.y = element_markdown(),
+                plot.subtitle = element_text(size = 18, vjust = -1),
+                plot.margin = unit(c(0, 0.1, 0.1, 0.1), "cm")
             )
     
     # Save the plot
@@ -63,9 +69,13 @@ s187_scatter_p = plot_cnr(
     output_cnr_plot = "S187/S187_cnr_scatter.pdf",
     title = "R6"
 )
-# S191 (I1)
+# S191 (T1)
 s191_scatter_p = plot_cnr(
     input_cnr = "S191/S191.cnr",
     output_cnr_plot = "S191/S191_cnr_scatter.pdf",
-    title = "I1"
+    title = "T1"
 )
+
+# Combine plots
+p = s48_scatter_p / s187_scatter_p / s191_scatter_p
+ggsave(filename = "Figure_4B.pdf", width = 10, height = 12, dpi = 600)
