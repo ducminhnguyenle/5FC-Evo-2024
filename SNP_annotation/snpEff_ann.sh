@@ -80,3 +80,21 @@ done
 # Selected SNPs
 bcftools view -T "regions.tsv" "cauris.snps.PASS.DP30.genotypefiltered.PEKT.ann.vcf.gz" | awk 'BEGIN{FS=OFS="\t"};{sub(/#/, "", $1); print $0}' > "cauris.snps.of.interest.ann.vcf"
 bcftools view -T regions.tsv "cauris.snps.PASS.DP30.genotypefiltered.PEKT.ann.vcf.gz" | grep -v "^##" | awk 'BEGIN{FS=OFS="\t"};{sub(/#/, "", $1); print $1,$2,$4,$5,$6,$7,$10,$11,$12,$13,$14}' > "cauris.snps.of.interest.tsv"
+
+# S48 vs B8441
+bcftools view -s strain_48 "cauris.snps.PASS.DP30.genotypefiltered.PEKT.ann.vcf.gz" | bcftools filter -i 'GT="1"' - | bcftools view -i 'FILTER="PASS"' - > "SNP_annotation/S48_vs_B8441/S48.RNA.snps.ann.vcf"
+SnpSift extractFields -s "," -e "." \
+    "SNP_annotation/S48_vs_B8441/S48.RNA.snps.ann.vcf" \
+    "CHROM" "POS" "REF" "ALT" "FILTER" "ANN[0].GENE" "ANN[0].EFFECT" "ANN[0].IMPACT" "ANN[0].HGVS_C" "ANN[0].HGVS_P" "GEN[0].GT" "GEN[0].AD" | \
+    awk 'BEGIN{FS=OFS="\t"}; {sub("\\.1", "", $1); print $1":"$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12}' \
+    > "SNP_annotation/S48_vs_B8441/S48.RNA.snps.ann.tsv"
+
+# Overlapped variants between strain 48 WT and B8441, comparing RNA-seq data with WGS data using an 80% ALT cutoff
+bedtools intersect \
+    -a "SNP_annotation/S48_vs_B8441/S48.RNA.snps.ann.vcf" \
+    -b "WGS/alt_AD_80/results/S48.snps.ann.vcf" | wc -l  # 660
+## SNPs in RNA calling that have no overlap in WGS calling
+bedtools intersect \
+    -a "SNP_annotation/S48_vs_B8441/S48.RNA.snps.ann.vcf" \
+    -b "WGS/alt_AD_80/results/S48.snps.ann.vcf" \
+    -v | wc -l # 7
