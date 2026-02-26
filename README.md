@@ -37,3 +37,7 @@ If you find this repository helpful, please cite our paper:
   note    = {Trinh Phan-Canh and Duc-Minh Nguyen-Le contributed equally to this work}
 }
 ```
+
+## License
+
+This repository is licensed under the [MIT License](LICENSE).
